@@ -1,4 +1,3 @@
-# SSL-Using-Let-s-Encrypt-on-EC2
 # SSL Certificate Setup with Let’s Encrypt, Nginx, and AWS Load Balancer
 
 This guide explains how to generate an SSL certificate using **Certbot** on an **Nginx EC2 instance**, import it into **AWS Certificate Manager (ACM)**, and attach it to an **AWS Load Balancer**.
