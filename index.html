@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSL Configuration - aniljadhav.co.in</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com" rel="stylesheet">
+    <style>
+        body { background-color: #0f172a; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .accent-gradient { background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); }
+    </style>
+</head>
+<body class="text-slate-200 font-sans antialiased min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-4xl w-full">
+        <!-- Header -->
+        <header class="mb-10 text-center">
+            <div class="inline-flex items-center justify-center p-3 mb-4 rounded-2xl accent-gradient shadow-lg shadow-sky-500/20">
+                <i class="fas fa-shield-alt text-3xl text-white"></i>
+            </div>
+            <h1 class="text-4xl font-extrabold text-white tracking-tight mb-2">SSL Deployment Success</h1>
+            <p class="text-slate-400 text-lg">Secure configuration for <span class="text-sky-400 font-mono">aniljadhav.co.in</span></p>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="grid md:grid-cols-2 gap-6">
+            
+            <!-- Learning Point Card -->
+            <div class="glass p-6 rounded-2xl hover:border-sky-500/50 transition-all duration-300">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center mr-4">
+                        <i class="fas fa-certificate text-sky-400"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-white">Certificate Stack</h2>
+                </div>
+                <p class="text-slate-400 leading-relaxed">
+                    Generated <code class="text-sky-300 bg-sky-900/30 px-1 rounded">.pem</code> files via <strong class="text-slate-200">Certbot</strong> on EC2. Certificates were imported into <strong class="text-slate-200">AWS Certificate Manager (ACM)</strong> for Load Balancer compatibility.
+                </p>
+            </div>
+
+            <!-- Listener Card -->
+            <div class="glass p-6 rounded-2xl hover:border-indigo-500/50 transition-all duration-300">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center mr-4">
+                        <i class="fas fa-network-wired text-indigo-400"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-white">Listener Logic</h2>
+                </div>
+                <p class="text-slate-400 leading-relaxed">
+                    Active <strong class="text-slate-200">HTTPS:443</strong> listener pointing to the ACM ARN. Enforced a <strong class="text-slate-200">301 Permanent Redirect</strong> from Port 80 to ensure global encryption.
+                </p>
+            </div>
+
+            <!-- Status Banner -->
+            <div class="md:col-span-2 glass p-4 rounded-xl border-emerald-500/30 flex items-center justify-between bg-emerald-500/5">
+                <div class="flex items-center">
+                    <span class="relative flex h-3 w-3 mr-4">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                    <span class="font-medium text-emerald-400">Security Status: Encrypted & Active</span>
+                </div>
+                <span class="text-xs text-slate-500 uppercase tracking-widest font-bold">Verified by Let's Encrypt</span>
+            </div>
+
+            <!-- Renewal Alert -->
+            <div class="md:col-span-2 bg-amber-500/10 border border-amber-500/20 p-4 rounded-xl flex gap-4">
+                <i class="fas fa-sync text-amber-500 mt-1"></i>
+                <p class="text-sm text-amber-200/80">
+                    <strong class="text-amber-400">Maintenance Required:</strong> Manual renewal and re-import into ACM is required every 90 days for this specific architectural setup.
+                </p>
+            </div>
+        </div>
+
+        <footer class="mt-12 text-center">
+            <p class="text-slate-500 text-sm">Automate your workflow with the [AWS CLI Documentation](https://docs.aws.amazon.com)</p>
+        </footer>
+    </div>
+
+</body>
+</html>
